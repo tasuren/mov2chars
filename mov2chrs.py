@@ -1,6 +1,7 @@
 import cv2
 
-from winsound import PlaySound,SND_FILENAME,SND_ASYNC
+try:from winsound import PlaySound,SND_FILENAME,SND_ASYNC
+except ImportError as e:print(e)
 from time import sleep,time
 from sys import argv
 
@@ -23,8 +24,7 @@ mov2chrs play2 <TextFileName>
 def mov2chrs(video_path,output_path,grafic=2):
     cap = cv2.VideoCapture(video_path)
 
-    if not cap.isOpened():
-        return
+    if not cap.isOpened():return print('ファイルの読み込みに失敗しました。')
 
     data,c = "",0
     frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
@@ -80,7 +80,9 @@ def play2(path):
     data = data.split("XXX")
     start,frame = time(),0
 
-    if music:PlaySound(music,SND_FILENAME | SND_ASYNC)
+    if music:
+      try:PlaySound(music,SND_FILENAME | SND_ASYNC)
+      except Exception as e:print(e)
 
     try:show(data,fps)
     except KeyboardInterrupt:pass
@@ -93,7 +95,9 @@ def play(path):
     data = f.readline()
     fps,music = float(data[:data.find("|")]),data[data.find("|")+1:data.find("\n")]
     print(fps)
-    if music:PlaySound(music,SND_FILENAME | SND_ASYNC)
+    if music:
+      try:PlaySound(music,SND_FILENAME | SND_ASYNC)
+      except Exception as e:print(e)
 
     try:
         while data:
