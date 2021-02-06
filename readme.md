@@ -5,10 +5,12 @@ Movie to Characters. And Play.
 OpenCVが必要です。
 OpenCV is required.
 
+まだ白黒歯科対応していません。
 Only black and white movies are supported yet.
 
 # How to use
 ### 日本語
+```
 mov2chrs convert <MP4> <OutPutTextFileName> <Size>
     テキストファイルにします。
     <Size>には整数を入れてください。
@@ -21,6 +23,7 @@ mov2chrs play2 <TextFileName>
     メモリにテキストファイルの中身をすべてとってから再生します。
     メモリに余裕があり快適に再生したい場合はplayでなくこちらを使用してください。
     メモリに入れるのに失敗(MemoryError)になる場合はplayを使用してください。
+```
 ### English (Translated by みらい翻訳)
 ```
 mov2chrs convert <MP4> <OutPutTextFileName> <Size>
