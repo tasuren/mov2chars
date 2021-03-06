@@ -1,13 +1,10 @@
 # Mov2Chrs in Python
-映像を文字に変換して再生できるやつ
-Movie to Characters. And Play.
-
-OpenCVが必要です。
-OpenCV is required.
-
-まだ白黒歯科対応していません。
-Only black and white movies are supported yet.
-
+映像を文字に変換して再生できるやつ  
+Movie to Characters. And Play.  
+OpenCVが必要です。  
+OpenCV is required.  
+まだ白黒歯科対応していません。  
+Only black and white movies are supported yet.  
 # How to use
 ### 日本語
 ```
